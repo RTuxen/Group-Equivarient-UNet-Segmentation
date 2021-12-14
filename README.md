@@ -1,6 +1,6 @@
 # Group-Equivarient-UNet-Segmentation
-Master-Course project in image segmentations using group equivariant convolutional neural networks. Specifically the U-Net ([paper](https://arxiv.org/abs/1505.04597))
-architecture is used. Project was made in the autumn semester of 2021 at the Technical University of Denmark.
+Master-Course project in image segmentations using group equivariant convolutional neural networks. Specifically the U-Net
+architecture is used. Project was carried out in the autumn semester of 2021 at the Technical University of Denmark.
 
 
 The project is carried out by [Rasmus Tuxen](https://github.com/RTuxen) and supervised by:

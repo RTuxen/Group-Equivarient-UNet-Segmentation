@@ -70,8 +70,11 @@ class G_UNet(torch.nn.Module):
         # Removes from an input image or feature map all the part of the signal 
         # defined on the pixels which lay outside the circle inscribed in the grid
         if config['equvariant_mask']:
+            self.equivariant_mask = True
             self.MaskModule = nn.MaskModule(self.input_type, config['image_size'], margin=1)   
-    
+        else:
+            self.equivariant_mask = False
+            
         # Create list with encoder  channels
         enc_dims = [self.in_channels, *self.channels]
         
@@ -194,7 +197,7 @@ class G_UNet(torch.nn.Module):
         
         # Removes from an input image or feature map all the part of the signal 
         # defined on the pixels which lay outside the circle inscribed in the grid
-        if config['equvariant_mask']:
+        if self.equivariant_mask:
             x = self.MaskModule(x)
         enc = x # x is input of first encoder
         
@@ -236,21 +239,24 @@ if __name__=='__main__':
     config = {
         'in_channels' : 3,              # Number of input channels
         'out_channels' : 1,             # Number of output channels
-        'channels' : [2,3,4],           # Convolution channels in layers
+        'channels' : [6,10,12],           # Convolution channels in layers
         'image_size': 128,              # Size of the images
         'n_conv' : 2,                   # Number of convolutions >= 2
         'batch_norm' : False,           # Use batch-norm (True/False)
         'dropout' : 0,                  # Use dropout? (0 <= dropout < 1)
         'kernel_size' : 3,              # Kernel size of all convolutions
         'padding' : 1,                  # Padding on all convolutions
-        'equvariant_mask' : False,      # Whether to mask for equivariance
-        'group'   : "D4"                # Which rotation group network belongs to
+        'equvariant_mask' : True,      # Whether to mask for equivariance
+        'group'   : "C4"                # Which rotation group network belongs to
         }
     
     model = G_UNet(config).to(device)
     x = torch.rand((1,3,128,128)).to(device)
     y = model(x)
     print(y.shape)
+    
+    pytorch_total_params = sum(p.numel() for p in model.parameters())
+    print("Total parameters:",pytorch_total_params)
 
     
     

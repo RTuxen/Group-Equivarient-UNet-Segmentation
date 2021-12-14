@@ -18,5 +18,5 @@ The data examined in this project is of Fundus Retina images
 
 - Indsæt billede af retina
 - Indsæt link til dataen
-![Alt text](experiments/figures/Loss.png?raw=true "Title")
+![plot](experiments/figures/Loss.png?raw=true "Title")
 

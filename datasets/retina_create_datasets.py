@@ -133,7 +133,7 @@ def create_retina_dataset(IMG_SIZE, N_train = 1000,
                     # Select a random crop from large volume
                     crop = np.random.randint([0,0],margin+1)
                     # Get patch
-                    I, S = get_patch(Large_I, Large_S, crop) 
+                    I, S = get_patch(Large_I, Large_S, IMG_SIZE, crop) 
                     
                     # Skip boring mostly black images
                     if np.sum(I == 0)/np.prod(I.shape) > 0.4:
@@ -172,7 +172,7 @@ def create_retina_dataset(IMG_SIZE, N_train = 1000,
         pbar.close()
     return None
 
-def get_patch(image, segmentation, crop):
+def get_patch(image, segmentation, IMG_SIZE, crop):
     """ Takes a patch from an image and its corresponding segmentation """
     I = image[crop[0]:crop[0]+IMG_SIZE,
                     crop[1]:crop[1]+IMG_SIZE]

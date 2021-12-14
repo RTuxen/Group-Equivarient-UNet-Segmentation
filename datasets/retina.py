@@ -115,3 +115,32 @@ if __name__ == '__main__':
         ax[i].imshow(np.moveaxis(X[i].numpy(),0,2))
         ax[i+N_imgs].imshow(y[i,0].numpy(),'gray')
     plt.show()
+    
+    
+    # #%%
+    # img_path = "data/Fundus_Retina/Data_Raw/images/image0243.png"
+    # seg_path = "data/Fundus_Retina/Data_Raw/segmentations/segmentation0243.png"
+    # # Read files
+    # image = Image.open(img_path)
+    # segmentation = Image.open(seg_path)
+    
+    # I = np.array(image)
+    # S = np.array(segmentation)
+    
+    # f,ax = plt.subplots(1,2, figsize=(12,7))
+    # ax[0].imshow(I)
+    # ax[1].imshow(S,'gray')
+    
+    # for i in range(2):
+    #     ax[i].axis('off')
+    #     ax[i].set_aspect('equal')
+    # plt.subplots_adjust(wspace=0, hspace=0)
+    # plt.show()
+    # f.savefig('image3.png', bbox_inches='tight',pad_inches = 0,dpi=300)
+    
+    
+    
+    
+    
+    
+    

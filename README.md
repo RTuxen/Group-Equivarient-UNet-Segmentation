@@ -10,9 +10,6 @@ The project is carried out by [Rasmus Tuxen](https://github.com/RTuxen) and supe
 
 Project uses the [General E(2)-Equivariant Steerable CNNs](https://github.com/QUVA-Lab/e2cnn) implementations of group convolutions.
 
-## Collaborators
-[Rasmus Tuxen](https://github.com/RTuxen)
-
 ## Dataset
 The data examined in this project is of Fundus Retina images. The original images and segmentations are from the PRIME-FP20, STARE, DRIVE and CHASEDB1 datasets.
 Examples of images with their corresponding segmentations:

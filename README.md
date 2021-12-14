@@ -14,7 +14,9 @@ Project uses the [General E(2)-Equivariant Steerable CNNs](https://github.com/QU
 
 ## Dataset
 The data examined in this project is of Fundus Retina images
+![Alt text](experiments/figures/model_outputs.png?raw=true "Title")
 
 - Indsæt billede af retina
 - Indsæt link til dataen
+![Alt text](experiments/figures/Loss.png?raw=true "Title")
 
